@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Navigation from './Navigation';
 import './SmurfForm.css';
+import { Link } from 'react-router-dom';
 
 class EditForm extends React.Component {
   constructor(props) {
@@ -36,44 +37,40 @@ class EditForm extends React.Component {
     .catch(err => {
       console.log(err);
     })
-    this.setState({
-      smurf: {
-        name: '',
-        age: '',
-        height: '',
-        id: ''
-      }
-    })
+    this.props.history.push('/')
   }
 
   render() {
-    return (
-      <div className="EditForm">
-        <Navigation />
-        <form onSubmit={() => this.editFriend(this.state.smurf)}>
-          <input
-            onChange={this.handleInputChange}
-            placeholder="name"
-            value={this.state.smurf.name}
-            name="name"
-          />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="height"
-            value={this.state.smurf.height}
-            name="height"
-          />
-          <input
-            type="number"
-            onChange={this.handleInputChange}
-            placeholder="age"
-            value={this.state.smurf.age}
-            name="age"
-          />
-          <button type="submit">Submit Edit</button>
-        </form>
-      </div>
-    )
+      return (
+        <div className="EditForm">
+          <Navigation />
+          <form onSubmit={() => this.editFriend(this.state.smurf)}>
+            <input
+              onChange={this.handleInputChange}
+              placeholder="name"
+              value={this.state.smurf.name}
+              name="name"
+              required
+            />
+            <input
+              onChange={this.handleInputChange}
+              placeholder="height"
+              value={this.state.smurf.height}
+              name="height"
+              required
+            />
+            <input
+              type="number"
+              onChange={this.handleInputChange}
+              placeholder="age"
+              value={this.state.smurf.age}
+              name="age"
+              required
+            />
+            <button type="submit">Submit Edit</button>
+          </form>
+        </div>
+      )
   }
 }
 

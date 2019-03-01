@@ -5,7 +5,7 @@ import './Navigation.css';
 const Navigation = props => {
   return (
     <nav className="navigation">
-      <NavLink exact to="/" activeClassName="active-nav">
+      <NavLink to="/" activeClassName="active-nav">
         <p>Home</p>
       </NavLink>
 
