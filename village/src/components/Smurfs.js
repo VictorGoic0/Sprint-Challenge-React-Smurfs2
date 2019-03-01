@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Smurf from './Smurf';
-import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
 

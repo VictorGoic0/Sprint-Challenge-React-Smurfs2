@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Navigation from './Navigation';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class SmurfForm extends Component {
   render() {
     return (
       <div className="SmurfForm">
+      <Navigation />
         <form onSubmit={e => this.addSmurf(e, this.state.smurf)}>
           <input
             onChange={this.handleInputChange}
