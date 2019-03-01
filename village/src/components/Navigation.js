@@ -5,12 +5,12 @@ import './Navigation.css';
 const Navigation = props => {
   return (
     <nav className="navigation">
-      <NavLink to="/">
+      <NavLink exact to="/" activeClassName="active-nav">
         <p>Home</p>
       </NavLink>
 
-      <NavLink to="/smurf-form">
-        <button>Add New Smurf</button>
+      <NavLink to="/smurf-form" activeClassName="active-nav">
+        <p>Add Smurf</p>
       </NavLink>
     </nav>
   )

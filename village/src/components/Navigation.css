@@ -1,14 +1,17 @@
 .navigation {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin: 20px 0 30px 0;
 }
 
-.navigation button {
-  width: 200px;
-  height: 50px;
-  background-color: black;
-  color: white;
-  font-size: 2rem;
-  border: 1px solid black;
+.navigation a {
+  text-decoration: none;
+  color: black;
+}
+
+.navigation .active-nav {
+  color: #00238c;
+  border: 1px solid #00238c;
+  padding: 10px;
 }

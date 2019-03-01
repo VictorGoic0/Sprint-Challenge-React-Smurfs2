@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Navigation from './Navigation';
+import './SmurfForm.css';
 
 class SmurfForm extends Component {
   constructor(props) {
