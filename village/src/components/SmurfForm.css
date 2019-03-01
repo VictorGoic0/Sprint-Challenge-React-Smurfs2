@@ -1,4 +1,4 @@
-.SmurfForm form {
+.SmurfForm form, .EditForm form {
   width: 400px;
   height: 400px;
   margin: 30px auto;
@@ -10,12 +10,12 @@
   justify-content: center;
 }
 
-.SmurfForm input {
+.SmurfForm input, .EditForm input {
   width: 80%;
   height: 40px;
 }
 
-.SmurfForm button {
+.SmurfForm button, .EditForm button {
   width: 200px;
   height: 50px;
   background-color: black;

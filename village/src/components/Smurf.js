@@ -1,5 +1,6 @@
 import React from 'react';
 import './Smurf.css';
+import { Link } from 'react-router-dom'
 
 const Smurf = props => {
   return (
@@ -21,9 +22,16 @@ const Smurf = props => {
       </div>
 
       <div className="edit">
-        <button>Edit Smurf</button>
+        <Link to={{ pathname: "/edit-form", state: {
+          smurf: {
+            name: props.name,
+            age: props.age,
+            height: props.height
+          }
+        } }}>
+          <button>Edit Smurf</button>
+        </Link>
       </div>
-
     </div>
   );
 };

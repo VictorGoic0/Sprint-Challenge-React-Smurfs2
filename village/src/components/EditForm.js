@@ -1,25 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
-import Navigation from './Navigation';
 import './SmurfForm.css';
 
-class SmurfForm extends Component {
+class EditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       smurf: {
-        name: '',
-        age: '',
-        height: ''
+        name: props.location.state.smurf.name,
+        age: props.location.state.smurf.age,
+        height: props.location.state.smurf.height
       }
-    };
-  }
-
-  addSmurf = smurf => {
-    // add code to create the smurf using the api
-    axios.post('http://localhost:3333/smurfs', smurf)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+    }
   }
 
   handleInputChange = e => {
@@ -33,11 +25,21 @@ class SmurfForm extends Component {
     console.log(this.state);
   };
 
+  editFriend = smurf => {
+    console.log(this.state);
+    axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
   render() {
     return (
-      <div className="SmurfForm">
-      <Navigation />
-        <form onSubmit={() => this.addSmurf(this.state.smurf)}>
+      <div className="EditForm">
+        <form onSubmit={() => this.editFriend(this.state.smurf)}>
           <input
             onChange={this.handleInputChange}
             placeholder="name"
@@ -57,11 +59,11 @@ class SmurfForm extends Component {
             value={this.state.smurf.age}
             name="age"
           />
-          <button type="submit">Add to the village</button>
+          <button type="submit">Submit Edit</button>
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default SmurfForm;
+export default EditForm;

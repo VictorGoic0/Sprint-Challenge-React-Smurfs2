@@ -5,6 +5,7 @@ import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 import axios from 'axios';
 import { Route } from 'react-router-dom';
+import EditForm from './components/EditForm';
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class App extends Component {
     axios.delete(`http://localhost:3333/smurfs/${id}`)
     .then(res => {
       console.log(res);
-      this.setState({ friends: res.data })
+      this.setState({ smurfs: res.data })
     })
     .catch(err => {
       console.log(err);
@@ -40,6 +41,7 @@ class App extends Component {
       <div className="App">
         <Route path="/" exact render={props => <Smurfs {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} />} />
         <Route path="/smurf-form" component={SmurfForm} />
+        <Route path="/edit-form" component={EditForm} />
       </div>
     );
   }
