@@ -23,11 +23,10 @@ const Smurf = props => {
 
       <div className="edit">
         <Link to={{ pathname: "/edit-form", state: {
-          smurf: {
-            name: props.name,
-            age: props.age,
-            height: props.height
-          }
+          name: props.name,
+          age: props.age,
+          height: props.height,
+          id: props.id
         } }}>
           <button>Edit Smurf</button>
         </Link>

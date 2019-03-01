@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Navigation from './Navigation';
 import './SmurfForm.css';
 
 class EditForm extends React.Component {
@@ -7,9 +8,10 @@ class EditForm extends React.Component {
     super(props);
     this.state = {
       smurf: {
-        name: props.location.state.smurf.name,
-        age: props.location.state.smurf.age,
-        height: props.location.state.smurf.height
+        name: props.location.state.name,
+        age: props.location.state.age,
+        height: props.location.state.height,
+        id: props.location.state.id
       }
     }
   }
@@ -34,11 +36,20 @@ class EditForm extends React.Component {
     .catch(err => {
       console.log(err);
     })
+    this.setState({
+      smurf: {
+        name: '',
+        age: '',
+        height: '',
+        id: ''
+      }
+    })
   }
 
   render() {
     return (
       <div className="EditForm">
+        <Navigation />
         <form onSubmit={() => this.editFriend(this.state.smurf)}>
           <input
             onChange={this.handleInputChange}
