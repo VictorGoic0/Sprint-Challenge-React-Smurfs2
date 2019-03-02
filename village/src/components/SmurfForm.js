@@ -15,13 +15,6 @@ class SmurfForm extends Component {
     };
   }
 
-  addSmurf = smurf => {
-    // add code to create the smurf using the api
-    axios.post('http://localhost:3333/smurfs', smurf)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-  }
-
   handleInputChange = e => {
     e.persist();
     this.setState(prevState => ({
@@ -37,7 +30,7 @@ class SmurfForm extends Component {
     return (
       <div className="SmurfForm">
       <Navigation />
-        <form onSubmit={() => this.addSmurf(this.state.smurf)}>
+        <form onSubmit={e => this.props.addSmurf(e, this.state.smurf)}>
           <input
             onChange={this.handleInputChange}
             placeholder="name"

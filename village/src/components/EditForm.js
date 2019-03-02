@@ -28,8 +28,8 @@ class EditForm extends React.Component {
     console.log(this.state);
   };
 
-  editFriend = smurf => {
-    console.log(this.state);
+  editFriend = (e, smurf) => {
+    e.preventDefault();
     axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
     .then(res => {
       console.log(res)
@@ -44,7 +44,7 @@ class EditForm extends React.Component {
       return (
         <div className="EditForm">
           <Navigation />
-          <form onSubmit={() => this.editFriend(this.state.smurf)}>
+          <form onSubmit={e => this.editFriend(e, this.state.smurf)}>
             <input
               onChange={this.handleInputChange}
               placeholder="name"
