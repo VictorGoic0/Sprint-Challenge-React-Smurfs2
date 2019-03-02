@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import Navigation from './Navigation';
 import './SmurfForm.css';
-import { Link } from 'react-router-dom';
 
 class EditForm extends React.Component {
   constructor(props) {

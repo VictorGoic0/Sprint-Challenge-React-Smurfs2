@@ -5,11 +5,11 @@ import './Navigation.css';
 const Navigation = props => {
   return (
     <nav className="navigation">
-      <NavLink to="/" activeClassName="active-nav">
+      <NavLink exact to={`/`} activeClassName="active-nav">
         <p>Home</p>
       </NavLink>
 
-      <NavLink to="/smurf-form" activeClassName="active-nav">
+      <NavLink to={`/smurf-form`} activeClassName="active-nav">
         <p>Add Smurf</p>
       </NavLink>
     </nav>

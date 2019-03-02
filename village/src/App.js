@@ -30,6 +30,7 @@ class App extends Component {
     .then(res => {
       console.log(res);
       this.setState({ smurfs: res.data })
+      this.props.history.push('/');
     })
     .catch(err => {
       console.log(err)
