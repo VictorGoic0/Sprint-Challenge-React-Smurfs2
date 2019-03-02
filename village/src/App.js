@@ -49,12 +49,25 @@ class App extends Component {
     })
   }
 
+  editFriend = (e, smurf) => {
+    e.preventDefault();
+    axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
+    .then(res => {
+      console.log(res);
+      this.setState({ smurfs: res.data })
+    })
+    .catch(err => {
+      console.log(err);
+    })
+    this.props.history.push('/')
+  }
+
   render() {
     return (
       <div className="App">
         <Route path="/" exact render={ownProps => <Smurfs {...ownProps} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} />} />
         <Route path="/smurf-form" render={ownProps => <SmurfForm {...ownProps} addSmurf={this.addSmurf} />} />
-        <Route path="/edit-form" component={EditForm} />
+        <Route path="/edit-form" render={ownProps => <EditForm {...ownProps} editFriend={this.editFriend} />} />
       </div>
     );
   }
