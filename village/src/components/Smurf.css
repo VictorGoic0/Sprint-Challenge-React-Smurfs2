@@ -1,0 +1,55 @@
+.Smurf {
+  width: 500px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin: 40px auto 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Smurf header {
+  width: 100%;
+  display: flex;
+}
+
+.Smurf h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.Smurf h3 {
+  margin: 0 10px;
+}
+
+.age, .height {
+  width: 100%;
+  display: flex;
+}
+
+.Smurf header button {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  color: white;
+  background-color: maroon;
+  border: 1px solid maroon;
+  align-self: baseline;
+  font-size: 1.8rem;
+  margin: 2px 2px 0 0;
+}
+
+.edit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.edit button {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  border: 1px solid black;
+}
